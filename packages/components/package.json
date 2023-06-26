@@ -2,7 +2,7 @@
   "name": "@cube/components",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/lib/index.js",
   "module": "dist/es/index.js",
   "type": "module",
   "sideEffects": false,
