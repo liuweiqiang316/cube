@@ -36,6 +36,21 @@ export default defineConfig({
           //配置打包根目录
           dir: "./dist/lib",
         },
+        {
+          name: "cube",
+          //打包格式
+          format: "umd",
+          //打包后文件名
+          entryFileNames: "[name].js",
+          //让打包目录和我们目录对应
+          // preserveModules: true,
+          exports: "named",
+          //配置打包根目录
+          dir: "./dist/umd",
+          globals: {
+            vue: "vue",
+          },
+        },
       ],
     },
     lib: {
@@ -46,7 +61,7 @@ export default defineConfig({
     vue(),
     dts({
       entryRoot: "./src",
-      outputDir: ["./dist/es/src", "../dist/lib/src"],
+      outputDir: ["./dist/es/src", "./dist/lib/src"],
       //指定使用的tsconfig.json为我们整个项目根目录下,如果不配置,你也可以在components下新建tsconfig.json
       tsConfigFilePath: "../../tsconfig.json",
     }),

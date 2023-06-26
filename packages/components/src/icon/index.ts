@@ -11,5 +11,5 @@ const withInstall = <T>(comp: T) => {
   return comp as SFCWithInstall<T>;
 };
 
-export const Icon = withInstall(_Icon);
-export default Icon;
+export const CIcon = withInstall(_Icon);
+export default CIcon;

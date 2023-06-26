@@ -37,6 +37,12 @@ importers:
 
   packages/components:
     devDependencies:
+      '@vitejs/plugin-vue':
+        specifier: ^4.1.0
+        version: 4.1.0(vite@4.3.9)(vue@3.3.4)
+      unplugin-vue-define-options:
+        specifier: ^1.3.8
+        version: 1.3.8(vue@3.3.4)
       vite:
         specifier: ^4.3.9
         version: 4.3.9(less@4.1.3)

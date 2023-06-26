@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
-// import { Button } from "@cube/components";
-import Button from '@cube/components/dist/es/src/button'
+import { CButton } from "@cube/components";
 
 defineProps<{ msg: string }>();
 
@@ -10,9 +9,8 @@ const count = ref(0);
 
 <template>
   <h1>{{ msg }}</h1>
-  <!-- <c-button type="plain" ></c-button>
-  <c-button></c-button> -->
-  <Button></Button>
+  <c-button type="plain"></c-button>
+  <c-button></c-button>
   <!-- <c-icon></c-icon> -->
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
