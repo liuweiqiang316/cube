@@ -1,4 +1,5 @@
 import { defineConfig } from "vite";
+import { resolve } from "path";
 import vue from "@vitejs/plugin-vue";
 import dts from "vite-plugin-dts";
 import DefineOptions from "unplugin-vue-define-options/vite";
@@ -56,6 +57,13 @@ export default defineConfig({
     lib: {
       entry: "./index.ts",
     },
+    commonjsOptions: {
+      // include: "/node_modules/ajv/lib/ajv.js",
+      include: [],
+    },
+  },
+  optimizeDeps: {
+    disabled: false,
   },
   plugins: [
     vue(),
@@ -67,4 +75,12 @@ export default defineConfig({
     }),
     DefineOptions(),
   ],
+  resolve: {
+    alias: [
+      {
+        find: "@",
+        replacement: resolve(__dirname, "src"),
+      },
+    ],
+  },
 });
