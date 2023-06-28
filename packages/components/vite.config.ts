@@ -58,7 +58,6 @@ export default defineConfig({
       entry: "./index.ts",
     },
     commonjsOptions: {
-      // include: "/node_modules/ajv/lib/ajv.js",
       include: [],
     },
   },
