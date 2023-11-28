@@ -38,7 +38,7 @@ export default defineConfig({
           dir: "./dist/lib",
         },
         {
-          name: "cube",
+          name: "llwwqq",
           //打包格式
           format: "umd",
           //打包后文件名

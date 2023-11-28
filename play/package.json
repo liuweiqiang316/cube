@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@cube/components": "workspace:^",
+    "@llwwqq/components": "workspace:^",
     "vue": "^3.2.47"
   },
   "devDependencies": {

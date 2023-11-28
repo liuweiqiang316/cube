@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { CButton } from "@cube/components";
+import { CButton } from "@llwwqq/components";
 
 defineProps<{ msg: string }>();
 
