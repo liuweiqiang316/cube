@@ -18,6 +18,7 @@
     "vue": "^3.3.9"
   },
   "dependencies": {
+    "@types/lodash": "^4.14.202",
     "element-plus": "^2.4.3",
     "lodash": "^4.17.21"
   }

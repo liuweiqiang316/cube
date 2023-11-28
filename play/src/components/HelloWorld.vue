@@ -1,18 +1,37 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { CButton } from "@llwwqq/components";
-import { get } from "@llwwqq/utils/request";
-
-console.log('%c 111 get', 'color:red', get);
+import { fetchRandomData, fetchRandomData2 } from "@/apis";
 
 defineProps<{ msg: string }>();
 
 const count = ref(0);
+
+const fetchData = async () => {
+  fetchRandomData.controller.abort()
+  const res = await fetchRandomData()
+  console.log('%c 111 res', 'color:red', res);
+}
+
+const fetchData2 = async () => {
+  fetchRandomData2.controller.abort()
+  const res = await fetchRandomData2()
+  console.log('%c 222 ', 'color:red', res);
+}
+const handleClick = () => {
+  fetchData()
+}
+
+onMounted(() => {
+  fetchData()
+  fetchData2()
+})
+
 </script>
 
 <template>
   <h1>{{ msg }}</h1>
-  <c-button type="plain"></c-button>
+  <c-button type="plain" @click="handleClick"></c-button>
   <c-button></c-button>
   <!-- <c-icon></c-icon> -->
   <div class="card">
@@ -25,9 +44,8 @@ const count = ref(0);
 
   <p>
     Check out
-    <a href="https://vuejs.org/guide/quick-start.html#local" target="_blank"
-      >create-vue</a
-    >, the official Vue + Vite starter
+    <a href="https://vuejs.org/guide/quick-start.html#local" target="_blank">create-vue</a>, the official Vue + Vite
+    starter
   </p>
   <p>
     Install

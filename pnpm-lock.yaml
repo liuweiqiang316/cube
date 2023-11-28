@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@types/lodash':
+        specifier: ^4.14.202
+        version: 4.14.202
       element-plus:
         specifier: ^2.4.3
         version: 2.4.3(vue@3.3.9)
@@ -58,9 +61,6 @@ importers:
       axios:
         specifier: ^1.6.2
         version: 1.6.2
-      content-disposition:
-        specifier: ^0.5.4
-        version: 0.5.4
       querystring:
         specifier: ^0.2.1
         version: 0.2.1
@@ -2011,13 +2011,6 @@ packages:
       '@babel/types': 7.23.4
     dev: true
 
-  /content-disposition@0.5.4:
-    resolution: {integrity: sha512-FveZTNuGw04cxlAiWbzi6zTAL/lhehaWbTtgluJh4/E95DqMwTmha3KZN1aAWA8cFIhHzMZUvLevkw5Rqk+tSQ==}
-    engines: {node: '>= 0.6'}
-    dependencies:
-      safe-buffer: 5.2.1
-    dev: false
-
   /convert-source-map@1.9.0:
     resolution: {integrity: sha512-ASFBup0Mz1uyiIjANan1jzLQami9z1PoYSZCiiYW2FczPbenXc45FZdBZLzOT+r6+iciuEModtmCti+hjaAk0A==}
     dev: true
@@ -3399,10 +3392,6 @@ packages:
     dependencies:
       queue-microtask: 1.2.3
     dev: true
-
-  /safe-buffer@5.2.1:
-    resolution: {integrity: sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==}
-    dev: false
 
   /safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}

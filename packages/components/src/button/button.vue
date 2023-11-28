@@ -20,7 +20,7 @@ withDefaults(defineProps<Props>(), {
 });
 
 const handleClick = () => {
-  console.log("handleClick", ajv, validate);
+  // console.log("handleClick", ajv, validate);
 };
 </script>
 
