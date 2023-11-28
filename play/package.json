@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@llwwqq/components": "workspace:^",
+    "@llwwqq/utils": "workspace:^",
     "vue": "^3.2.47"
   },
   "devDependencies": {

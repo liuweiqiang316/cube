@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { CButton } from "@llwwqq/components";
+import { get } from "@llwwqq/utils/request";
+
+console.log('%c 111 get', 'color:red', get);
 
 defineProps<{ msg: string }>();
 
