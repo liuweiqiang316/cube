@@ -1,7 +1,7 @@
 import axios, { CanceledError } from "axios";
 import type { Method } from "axios";
 import { ElMessage } from "element-plus";
-import { debounce, reject } from "lodash";
+import { debounce } from "lodash";
 import { download, isFunction } from "./index";
 import { stringify } from "querystring";
 
