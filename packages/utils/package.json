@@ -2,9 +2,11 @@
   "name": "@llwwqq/utils",
   "version": "0.0.1",
   "description": "",
-  "main": "dist/index.js",
+  "main": "dist/index.global.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsup index.ts --dts"
+    "build": "tsup src/index.ts --dts --format esm,cjs,iife"
   },
   "keywords": [],
   "author": "",

@@ -1,4 +1,4 @@
-import { get } from "@llwwqq/utils/request";
+import { get } from "@llwwqq/utils";
 
 export const fetchRandomData = get(() => {
   return {

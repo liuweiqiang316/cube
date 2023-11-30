@@ -32,7 +32,7 @@ importers:
         version: 1.4.0(vue@3.3.9)
       vite-plugin-dts:
         specifier: 1.4.1
-        version: 1.4.1(vite@5.0.2)
+        version: 1.4.1(vite@4.3.9)
       vue:
         specifier: ^3.3.9
         version: 3.3.9(typescript@5.3.2)
@@ -1630,7 +1630,7 @@ packages:
   /@vueuse/shared@10.2.0(vue@3.3.4):
     resolution: {integrity: sha512-dIeA8+g9Av3H5iF4NXR/sft4V6vys76CpZ6hxwj8eMXybXk2WRl3scSsOVi+kQ9SX38COR7AH7WwY83UcuxbSg==}
     dependencies:
-      vue-demi: 0.14.5(vue@3.3.4)
+      vue-demi: 0.14.6(vue@3.3.4)
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
@@ -3805,7 +3805,7 @@ packages:
       vite: 4.3.9(@types/node@18.18.13)(less@4.2.0)
     dev: true
 
-  /vite-plugin-dts@1.4.1(vite@5.0.2):
+  /vite-plugin-dts@1.4.1(vite@4.3.9):
     resolution: {integrity: sha512-jo7E4ZeheD2o48oGiI3EygPbej7ZkGFHg3GVTt7Wuo6NgzThLvuzGGuduaFpnhJOGi1piDFsu6oui/wDKIIORQ==, tarball: https://registry.npmmirror.com/vite-plugin-dts/-/vite-plugin-dts-1.4.1.tgz}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -3818,7 +3818,7 @@ packages:
       fast-glob: 3.3.2
       fs-extra: 10.1.0
       ts-morph: 14.0.0
-      vite: 5.0.2(less@4.2.0)
+      vite: 4.3.9(less@4.2.0)
     transitivePeerDependencies:
       - '@types/node'
       - supports-color
@@ -3975,14 +3975,13 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vite@5.0.2(less@4.2.0):
-    resolution: {integrity: sha512-6CCq1CAJCNM1ya2ZZA7+jS2KgnhbzvxakmlIjN24cF/PXhRMzpM/z8QgsVJA/Dm5fWUWnVEsmtBoMhmerPxT0g==, tarball: https://registry.npmmirror.com/vite/-/vite-5.0.2.tgz}
-    engines: {node: ^18.0.0 || >=20.0.0}
+  /vite@4.3.9(less@4.2.0):
+    resolution: {integrity: sha512-qsTNZjO9NoJNW7KnOrgYwczm0WctJ8m/yqYAMAK9Lxt4SoySUfS5S8ia9K7JHpa3KEeMfyF8LoJ3c5NeBJy6pg==}
+    engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
-      '@types/node': ^18.0.0 || >=20.0.0
+      '@types/node': '>= 14'
       less: '*'
-      lightningcss: ^1.21.0
       sass: '*'
       stylus: '*'
       sugarss: '*'
@@ -3991,8 +3990,6 @@ packages:
       '@types/node':
         optional: true
       less:
-        optional: true
-      lightningcss:
         optional: true
       sass:
         optional: true
@@ -4003,10 +4000,10 @@ packages:
       terser:
         optional: true
     dependencies:
-      esbuild: 0.19.8
+      esbuild: 0.17.19
       less: 4.2.0
-      postcss: 8.4.31
-      rollup: 4.6.0
+      postcss: 8.4.24
+      rollup: 3.25.1
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
