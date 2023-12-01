@@ -34,6 +34,9 @@ onMounted(() => {
   <h1>{{ msg }}</h1>
   <c-button type="plain" @click="handleClick"></c-button>
   <c-button></c-button>
+  <div class="aa">
+    <c-tooltip>xxxxxx</c-tooltip>
+  </div>
   <!-- <c-icon></c-icon> -->
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
@@ -59,5 +62,14 @@ onMounted(() => {
 <style scoped>
 .read-the-docs {
   color: #888;
+}
+
+.aa {
+  width: 20px;
+  height: 20px;
+  border: 1px solid red;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 </style>
