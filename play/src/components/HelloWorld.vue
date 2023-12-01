@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
-import { CButton } from "@llwwqq/components";
+import { CButton, CTooltip } from "@llwwqq/components";
 import { fetchRandomData, fetchRandomData2 } from "@/apis";
 
 defineProps<{ msg: string }>();
 
+console.log('%c 111 CTooltip', 'color:red', CTooltip);
 const count = ref(0);
 
 const fetchData = async () => {
