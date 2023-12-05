@@ -1,6 +1,7 @@
 export * from "./request";
 export * from "./download";
 export * from "./isEllipsis";
+export * from "./withInstall";
 
 export const isFunction = (val: any) => typeof val === "function";
 

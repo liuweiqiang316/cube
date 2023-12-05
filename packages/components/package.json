@@ -32,7 +32,9 @@
   "dependencies": {
     "@llwwqq/utils": "workspace:^",
     "@vueuse/core": "^10.6.1",
-    "ajv": "^6.12.6",
+    "ajv": "^6.12.6"
+  },
+  "peerDependencies": {
     "element-plus": "^2.4.3"
   }
 }

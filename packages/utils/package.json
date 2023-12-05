@@ -2,7 +2,7 @@
   "name": "@llwwqq/utils",
   "version": "0.0.1",
   "description": "",
-  "main": "dist/index.global.js",
+  "main": "dist/index.mjs",
   "module": "dist/index.mjs",
   "type": "module",
   "types": "dist/index.d.ts",
@@ -18,5 +18,8 @@
   },
   "devDependencies": {
     "tsup": "^8.0.1"
+  },
+  "peerDependencies": {
+    "vue": "^3.3.9"
   }
 }

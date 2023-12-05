@@ -15,7 +15,7 @@ export default defineConfig({
     //minify: false,
     rollupOptions: {
       //忽略打包vue文件
-      external: ["vue"],
+      external: ["vue", "element-plus"],
       input: ["index.ts"],
       output: [
         {
@@ -24,7 +24,7 @@ export default defineConfig({
           //打包后文件名
           entryFileNames: "[name].js",
           //让打包目录和我们目录对应
-          // preserveModules: true,
+          preserveModules: true,
           exports: "named",
           //配置打包根目录
           dir: "./dist/es",
@@ -35,7 +35,7 @@ export default defineConfig({
           //打包后文件名
           entryFileNames: "[name].js",
           //让打包目录和我们目录对应
-          // preserveModules: true,
+          preserveModules: true,
           exports: "named",
           //配置打包根目录
           dir: "./dist/lib",
@@ -84,12 +84,9 @@ export default defineConfig({
     }),
   ],
   resolve: {
-    alias: [
-      {
-        find: "@",
-        replacement: resolve(__dirname, "src"),
-      },
-    ],
+    alias: {
+      '@/': resolve(__dirname, './src/')
+    },
   },
   define: {
     __vite_process_env_NODE_ENV: `'${process.env.NODE_ENV}'`,
