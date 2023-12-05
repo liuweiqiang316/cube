@@ -60,13 +60,13 @@ export default defineConfig({
     lib: {
       entry: "./index.ts",
     },
-    commonjsOptions: {
-      include: [],
-    },
+    // commonjsOptions: {
+    //   include: [],
+    // },
   },
-  optimizeDeps: {
-    disabled: false,
-  },
+  // optimizeDeps: {
+  //   disabled: false,
+  // },
   plugins: [
     vue(),
     dts({

@@ -7,8 +7,6 @@
   </button>
 </template>
 <script lang="ts" setup>
-import { ajv, validate } from "@/hook/useAjv";
-
 interface Props {
   type?: string;
 }
