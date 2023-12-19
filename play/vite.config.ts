@@ -1,25 +1,23 @@
 import { defineConfig } from "vite";
 import { resolve } from "path";
 import DefineOptions from "unplugin-vue-define-options/vite";
-import { visualizer } from "rollup-plugin-visualizer";
 import vueDevtools from "vite-plugin-vue-devtools";
 import vue from "@vitejs/plugin-vue";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
-import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
+import { WqResolver } from "@llwwqq/resolver";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
     DefineOptions(),
-    visualizer({ open: true }),
     vueDevtools(),
     AutoImport({
-      resolvers: [ElementPlusResolver()],
+      resolvers: [WqResolver()],
     }),
     Components({
-      resolvers: [ElementPlusResolver()],
+      resolvers: [WqResolver()],
     }),
   ],
   resolve: {

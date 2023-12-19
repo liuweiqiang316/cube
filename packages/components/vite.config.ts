@@ -1,94 +1,69 @@
 import { defineConfig } from "vite";
-import { resolve } from "path";
+import type { UserConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import dts from "vite-plugin-dts";
-import DefineOptions from "unplugin-vue-define-options/vite";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 
-export default defineConfig({
-  build: {
-    //打包文件目录
-    outDir: "es",
-    //压缩
-    //minify: false,
-    rollupOptions: {
-      //忽略打包vue文件
-      external: ["vue", "element-plus"],
-      input: ["index.ts"],
-      output: [
-        {
-          //打包格式
-          format: "es",
-          //打包后文件名
-          entryFileNames: "[name].js",
-          //让打包目录和我们目录对应
-          preserveModules: true,
-          exports: "named",
-          //配置打包根目录
-          dir: "./dist/es",
-        },
-        {
-          //打包格式
-          format: "cjs",
-          //打包后文件名
-          entryFileNames: "[name].js",
-          //让打包目录和我们目录对应
-          preserveModules: true,
-          exports: "named",
-          //配置打包根目录
-          dir: "./dist/lib",
-        },
-        {
-          name: "llwwqq",
-          //打包格式
-          format: "umd",
-          //打包后文件名
-          entryFileNames: "[name].js",
-          //让打包目录和我们目录对应
-          // preserveModules: true,
-          exports: "named",
-          //配置打包根目录
-          dir: "./dist/umd",
-          globals: {
-            vue: "vue",
+export default defineConfig(() => {
+  return {
+    plugins: [
+      vue(),
+      dts({
+        // 输出目录
+        outDir: ["dist/types"],
+        // 将动态引入转换为静态（例如：`import('vue').DefineComponent` 转换为 `import { DefineComponent } from 'vue'`）
+        staticImport: true,
+        // 将所有的类型合并到一个文件中
+        rollupTypes: true,
+      }),
+      AutoImport({
+        resolvers: [ElementPlusResolver()],
+      }),
+      Components({
+        resolvers: [ElementPlusResolver()],
+      }),
+    ],
+    build: {
+      rollupOptions: {
+        external: ["vue"],
+        // 输出配置
+        output: [
+          {
+            // 打包成 es module
+            format: "es",
+            // 重命名
+            entryFileNames: "[name].js",
+            // 打包目录和开发目录对应
+            preserveModules: true,
+            // 输出目录
+            dir: "dist/es",
+            // 指定保留模块结构的根目录
+            preserveModulesRoot: "src",
+            exports: "named",
           },
-        },
-      ],
+          {
+            // 打包成 commonjs
+            format: "cjs",
+            // 重命名
+            entryFileNames: "[name].js",
+            // 打包目录和开发目录对应
+            preserveModules: true,
+            // 输出目录
+            dir: "dist/lib",
+            // 指定保留模块结构的根目录
+            preserveModulesRoot: "src",
+            exports: "named",
+          },
+        ],
+      },
+      lib: {
+        // 指定入口文件
+        entry: "src/index.ts",
+        // 模块名
+        name: "wq_components",
+      },
     },
-    lib: {
-      entry: "./index.ts",
-    },
-    // commonjsOptions: {
-    //   include: [],
-    // },
-  },
-  // optimizeDeps: {
-  //   disabled: false,
-  // },
-  plugins: [
-    vue(),
-    dts({
-      entryRoot: "./src",
-      outputDir: ["./dist/es/src", "./dist/lib/src"],
-      //指定使用的tsconfig.json为我们整个项目根目录下,如果不配置,你也可以在components下新建tsconfig.json
-      tsConfigFilePath: "./tsconfig.json",
-    }),
-    DefineOptions(),
-    AutoImport({
-      resolvers: [ElementPlusResolver()],
-    }),
-    Components({
-      resolvers: [ElementPlusResolver()],
-    }),
-  ],
-  resolve: {
-    alias: {
-      '@/': resolve(__dirname, './src/')
-    },
-  },
-  define: {
-    __vite_process_env_NODE_ENV: `'${process.env.NODE_ENV}'`,
-  },
+  } as UserConfig;
 });
